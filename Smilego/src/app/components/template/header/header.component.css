@@ -1,0 +1,10 @@
+img {
+  height: 3rem;
+  margin: 3px;
+}
+
+.header {
+  justify-content: center;
+  height: 10%;
+  background-color: beige;
+}
