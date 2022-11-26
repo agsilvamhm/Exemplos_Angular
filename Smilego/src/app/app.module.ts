@@ -7,17 +7,21 @@ import { HeaderComponent } from './components/template/header/header.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SeletorComponent } from './components/util/seletor/seletor.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SeletorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

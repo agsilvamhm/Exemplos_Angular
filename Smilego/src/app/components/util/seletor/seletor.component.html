@@ -1,0 +1,8 @@
+<h2>Exemplo de um seletor</h2>
+
+<select name="item">
+  <option value=""></option>
+  <option *ngFor="let produto of produtos | orderBy: 'nome'" [value]="produto.id">
+    {{produto.id}} - {{produto.nome}}
+  </option>
+</select>
