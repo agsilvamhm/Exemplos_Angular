@@ -1,0 +1,6 @@
+<select name="msg">
+  <option value=""></option>
+  <option *ngFor=" let mensagem of mensagens | orderBy: 'id' " [value]= "mensagem.id" >
+     {{mensagem.id}} - {{mensagem.texto }}
+  </option>
+</select>
