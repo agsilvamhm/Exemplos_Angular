@@ -22,9 +22,7 @@ mensagens: mensagem[] =[{id:'13', texto:'Décimo terciro teste'},
                         {id: '2', texto:'Segundo teste'}
                       ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
