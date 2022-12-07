@@ -32,7 +32,13 @@ lista:mensagem[] = [{id:'13', texto:'Décimo terciro teste'},
   constructor() {}
 
   ngOnInit(): void {
-    this.converter();
+   // this.converter();
+    this.lista = this.lista.map(function(item:{id:any; string:any; texto:string}){
+        return {
+          id: isNaN(Number(item.id)) ? item.id:Number(item.id),
+          texto: item.texto
+        }
+    });
   }
 
  converter(): void{
