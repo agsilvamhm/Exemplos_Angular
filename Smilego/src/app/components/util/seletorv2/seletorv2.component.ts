@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 interface mensagem {
-  id: string,
+  id: String,
+  texto: String
+}
+
+interface mensagemFormatada {
+  id: Number,
   texto: String
 }
 
@@ -13,16 +18,30 @@ interface mensagem {
 
 export class Seletorv2Component implements OnInit {
 
-mensagens: mensagem[] =[{id:'13', texto:'Décimo terciro teste'},
-                        {id: '4', texto:'Quarto teste'},
-                        {id: '1', texto:'Primiro teste'},
-                        {id: '8', texto:'Oitavo teste'},
-                        {id: '35', texto:'Trigésimo quinto teste'},
-                        {id: '4', texto:'Quarto teste pela segunda vez'},
-                        {id: '2', texto:'Segundo teste'}
+listaFormatada: mensagemFormatada[]=[];
+
+lista:mensagem[] = [{id:'13', texto:'Décimo terciro teste'},
+          {id: '4', texto:'Quarto teste'},
+          {id: '1', texto:'Primiro teste'},
+          {id: '8', texto:'Oitavo teste'},
+          {id: '35', texto:'Trigésimo quinto teste'},
+          {id: '4', texto:'Quarto teste pela segunda vez'},
+          {id: '2', texto:'Segundo teste'}
                       ];
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.converter();
+  }
+
+ converter(): void{
+    for(let i=0; i < this.lista.length; i++){
+        var objeto:mensagemFormatada = {
+          id: Number(this.lista[i].id),
+          texto: this.lista[i].texto
+        };
+        this.listaFormatada.push(objeto);
+     }
+   }
 }

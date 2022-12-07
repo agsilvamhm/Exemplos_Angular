@@ -1,6 +1,7 @@
 <select name="msg">
   <option value=""></option>
-  <option *ngFor=" let mensagem of mensagens | orderBy: 'id' " [value]= "mensagem.id" >
+  <option *ngFor=" let mensagem of listaFormatada | orderBy: 'id' " [value]= "mensagem.id" >
      {{mensagem.id}} - {{mensagem.texto }}
   </option>
 </select>
+<button (click)="converter()">Gerar</button>
