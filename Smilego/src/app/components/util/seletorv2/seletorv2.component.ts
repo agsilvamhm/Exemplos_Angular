@@ -5,11 +5,6 @@ interface mensagem {
   texto: String
 }
 
-interface mensagemFormatada {
-  id: Number,
-  texto: String
-}
-
 @Component({
   selector: 'app-seletorv2',
   templateUrl: './seletorv2.component.html',
@@ -17,8 +12,6 @@ interface mensagemFormatada {
 })
 
 export class Seletorv2Component implements OnInit {
-
-listaFormatada: mensagemFormatada[]=[];
 
 lista:mensagem[] = [{id:'13', texto:'Décimo terciro teste'},
           {id: '4', texto:'Quarto teste'},
@@ -35,19 +28,9 @@ lista:mensagem[] = [{id:'13', texto:'Décimo terciro teste'},
    // this.converter();
     this.lista = this.lista.map(function(item:{id:any; string:any; texto:string}){
         return {
-          id: isNaN(Number(item.id)) ? item.id:Number(item.id),
-          texto: item.texto
-        }
+               id: isNaN(Number(item.id)) ? item.id:Number(item.id),
+              texto: item.texto
+              }
     });
   }
-
- converter(): void{
-    for(let i=0; i < this.lista.length; i++){
-        var objeto:mensagemFormatada = {
-          id: Number(this.lista[i].id),
-          texto: this.lista[i].texto
-        };
-        this.listaFormatada.push(objeto);
-     }
-   }
 }
