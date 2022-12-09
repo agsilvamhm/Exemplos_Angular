@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 interface mensagem {
-  id: String,
+  id: String | number,
   texto: String
 }
 
-let lista:[]=[];
+let lista:mensagem[]=[];
 
 @Component({
   selector: 'app-seletorv2',
@@ -15,7 +15,7 @@ let lista:[]=[];
 
 export class Seletorv2Component implements OnInit {
 
-lista = [{id:'13', texto:'Décimo terciro teste'},
+lista: mensagem []= [{id:'13', texto:'Décimo terciro teste'},
          {id: '4', texto:'Quarto teste'},
          {id: '1', texto:'Primiro teste'},
          {id: '8', texto:'Oitavo teste'},
@@ -27,11 +27,11 @@ lista = [{id:'13', texto:'Décimo terciro teste'},
 
   ngOnInit(): void {
 
-     this.lista = this.lista.map(function(item){
+        this.lista = this.lista.map(function(item){
         return {
                id: isNaN(Number(item.id)) ? item.id:Number(item.id),
                texto: item.texto
-              }
+               }
     });
   }
 }
